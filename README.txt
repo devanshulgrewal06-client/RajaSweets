@@ -1,28 +1,11 @@
-RAJA SWEETS — LUXURY WEBSITE PROPOSAL DEMO
+RAJA SWEETS — STATIC WEBSITE
 
-Open index.html in a browser.
+Flow:
+Raja Sweets -> bottom centered "Website Designed & Developed by"
+Devanshul Grewal | VIEW PROFILE -> Devanshul Grewal page.
 
-Included:
-- Luxury red / ivory / gold visual direction
-- Responsive home page
-- Menu categories: Sweets, Restaurant, Chinese, Cakes & Bakery, Namkeen
-- Add-to-cart ordering flow
-- Demo checkout flow
-- Dine-in Table QR ordering section
-- Brand/story section
-- Contact/footer
-- Mobile responsive layout
+The Devanshul Grewal page keeps BOTH the personal introduction and DS Technology
+company introduction on the SAME page. DS Technology is the final major section
+before the footer and uses the supplied DS Technology visual.
 
-Important:
-The menu/prices are demonstration content for the proposal. Replace prices, images, phone, timings,
-payment details and exact menu with the restaurant's approved information before production.
-
-The real production version can add:
-- Admin dashboard
-- Live menu management
-- Table-specific QR codes
-- Kitchen/order dashboard
-- Razorpay/UPI payment
-- WhatsApp/SMS confirmations
-- Delivery/takeaway modes
-- Order history and analytics
+No backend, database, login, or online ordering.

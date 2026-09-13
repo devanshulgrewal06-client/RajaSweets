@@ -1,143 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raja Sweets — Luxury Restaurant Demo</title>
-<meta name="description" content="Luxury website proposal demo for Raja Sweets, Modinagar.">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
-:root{
-  --red:#8f1019; --red2:#b51d2b; --gold:#c8a15a; --cream:#f8f2e8;
-  --ink:#171313; --muted:#746b65; --white:#fffdf9; --line:#e8dcc9;
-}
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,Arial,sans-serif}
-button{font:inherit;cursor:pointer}
-.top{background:#160d0d;color:#e9d6ad;text-align:center;padding:9px 15px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
-nav{position:sticky;top:0;z-index:20;background:rgba(248,242,232,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.navin{max-width:1240px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:15px 22px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--red)}
-.logo{width:45px;height:45px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;position:relative;background:#fffaf0}
-.logo:before{content:"♛";font-size:23px;color:var(--gold)}
-.brandtext{line-height:.9}.brandtext b{display:block;font:700 27px "Cormorant Garamond",serif;letter-spacing:.02em}.brandtext span{font-size:8px;letter-spacing:.32em;color:#6b5b45}
-.links{display:flex;gap:28px;align-items:center}.links a{color:#352c28;text-decoration:none;font-size:13px;font-weight:600}.links a:hover{color:var(--red)}
-.cartbtn,.primary{border:0;background:var(--red);color:white;padding:12px 18px;border-radius:4px;font-weight:700}.cartbtn span{background:#fff;color:var(--red);padding:2px 6px;border-radius:10px;margin-left:5px;font-size:11px}
-.hero{max-width:1240px;margin:auto;padding:78px 22px 65px;display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
-.kicker{color:var(--red);font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
-h1,h2,h3{font-family:"Cormorant Garamond",serif}
-h1{font-size:clamp(55px,7vw,94px);line-height:.82;margin:18px 0;color:#221717;font-weight:600}
-.hero p{max-width:570px;color:var(--muted);font-size:16px;line-height:1.8}
-.actions{display:flex;gap:12px;margin-top:28px}.secondary{border:1px solid #bba98d;background:transparent;padding:12px 18px;border-radius:4px;font-weight:700;color:#342b26}
-.hero-art{min-height:475px;border-radius:7px;position:relative;overflow:hidden;background:
- radial-gradient(circle at 48% 42%,rgba(255,244,203,.25),transparent 23%),
- linear-gradient(145deg,#320d10,#7c101a 48%,#21090b);
- box-shadow:0 22px 60px rgba(67,26,17,.22);
- display:grid;place-items:center;
-}
-.plate{width:290px;height:290px;border-radius:50%;background:#f8f1df;border:10px solid #d6b36b;box-shadow:0 0 0 4px #f8f1df,0 30px 60px #17060688;display:grid;place-items:center;position:relative}
-.sweet{width:118px;height:78px;border-radius:52% 48% 45% 55%;background:linear-gradient(135deg,#e7bf70,#9f5b28);box-shadow:inset -8px -8px 15px #743b1b66,0 9px 12px #4d220d55;transform:rotate(-8deg)}
-.sweet:after{content:"";position:absolute;width:65px;height:5px;background:#f6e3ae;top:32px;left:26px;border-radius:50%}
-.orn{position:absolute;color:#e6c782;font:40px "Cormorant Garamond",serif;opacity:.8}.orn.t{top:24px;left:28px}.orn.b{bottom:20px;right:28px;transform:rotate(180deg)}
-.hero-note{position:absolute;left:28px;bottom:25px;color:#f7e7c3;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
-section{max-width:1240px;margin:auto;padding:75px 22px}.sectionhead{text-align:center;max-width:700px;margin:0 auto 38px}.sectionhead h2{font-size:55px;margin:8px 0}.sectionhead p{color:var(--muted);line-height:1.7}
-.stats{background:#1b1111;color:#f7e8c9;display:grid;grid-template-columns:repeat(4,1fr);padding:28px calc((100% - 1196px)/2);text-align:center}.stats b{font:600 32px "Cormorant Garamond",serif;display:block}.stats span{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#c9b99b}
-.tabs{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-bottom:30px}.tab{background:transparent;border:1px solid #cdbda4;color:#493d35;padding:9px 14px;border-radius:30px;font-size:12px;font-weight:700}.tab.active{background:var(--red);color:#fff;border-color:var(--red)}
-.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.item{background:var(--white);border:1px solid var(--line);padding:22px;border-radius:6px;display:flex;gap:15px;justify-content:space-between;min-height:145px;transition:.2s}.item:hover{transform:translateY(-3px);box-shadow:0 12px 30px #5c291112}.thumb{width:82px;height:82px;flex:0 0 82px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f3d990,#bd7a3e 45%,#743016);box-shadow:inset -8px -8px 15px #551f0d44}.item h3{margin:0 0 6px;font-size:25px}.item p{font-size:12px;color:var(--muted);line-height:1.5;margin:0 0 13px}.price{font-weight:800;color:var(--red);font-size:14px}.add{border:1px solid #cdbda4;background:#fff8ed;color:var(--red);padding:7px 10px;border-radius:3px;font-weight:800;font-size:12px}
-.story{background:#fffaf2;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.storyin{max-width:1240px;margin:auto;padding:80px 22px;display:grid;grid-template-columns:.9fr 1.1fr;gap:65px;align-items:center}.storybox{min-height:400px;background:linear-gradient(145deg,#4a0c12,#a71929);border-radius:6px;display:grid;place-items:center;position:relative;overflow:hidden;color:#f5dfb4}.storybox:before,.storybox:after{content:"";position:absolute;border:1px solid #d8b96d55;border-radius:50%}.storybox:before{width:330px;height:330px}.storybox:after{width:270px;height:270px}.seal{z-index:2;text-align:center}.seal strong{font:600 60px "Cormorant Garamond",serif;display:block}.seal small{letter-spacing:.35em;font-size:10px}.storycopy h2{font-size:56px;line-height:.9;margin:12px 0}.storycopy p{color:var(--muted);line-height:1.85}.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.pillar{padding:16px;border:1px solid var(--line);background:#fff}.pillar b{font-family:"Cormorant Garamond";font-size:24px}.pillar span{display:block;font-size:11px;color:var(--muted);margin-top:4px}
-.order{background:#1b1111;color:#fff4dc;max-width:none}.orderin{max-width:1240px;margin:auto;padding:80px 22px;display:grid;grid-template-columns:1fr 1fr;gap:60px}.order h2{font-size:60px;margin:12px 0}.order p{color:#cfc0a8;line-height:1.8}.steps{display:grid;gap:14px;margin-top:25px}.step{display:flex;gap:15px;align-items:center}.num{width:38px;height:38px;border:1px solid #bfa66e;border-radius:50%;display:grid;place-items:center;color:#e3c77e}.qr{background:#fff;color:#222;border-radius:6px;padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:310px}.fakeqr{width:150px;height:150px;background:repeating-conic-gradient(#111 0 8deg,#fff 8deg 16deg);border:10px solid #fff;box-shadow:0 0 0 1px #ddd}.qr b{margin-top:18px}.qr span{font-size:11px;color:#777;margin-top:6px}
-.footer{background:#100909;color:#d7c6a6;padding:45px 22px}.footerin{max-width:1240px;margin:auto;display:flex;justify-content:space-between;gap:30px;align-items:center}.footer b{font:600 32px "Cormorant Garamond"}.footer p{font-size:12px;color:#9c8d77}
-.drawer{position:fixed;inset:0;background:#0008;z-index:50;display:none}.drawer.open{display:block}.panel{position:absolute;right:0;top:0;height:100%;width:min(460px,100%);background:#fffaf3;padding:25px;overflow:auto;box-shadow:-20px 0 50px #0004}.close{float:right;border:0;background:none;font-size:24px}.panel h2{font-size:42px;margin:35px 0 10px}.cartline{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:14px 0}.qty button{border:1px solid #d4c3aa;background:white;width:28px;height:28px}.checkout{width:100%;margin-top:18px;padding:14px;border:0;background:var(--red);color:#fff;font-weight:800}
-.modal{position:fixed;inset:0;background:#0009;z-index:60;display:none;place-items:center;padding:20px}.modal.open{display:grid}.modalbox{background:#fffaf3;width:min(560px,100%);padding:28px;border-radius:6px}.modalbox h2{font-size:40px;margin:0 0 18px}.field{width:100%;padding:13px;margin:6px 0;border:1px solid #d7c8b0;background:#fff}.notice{font-size:11px;color:#766c62;margin-top:10px;line-height:1.5}
-@media(max-width:850px){.links{display:none}.hero,.storyin,.orderin{grid-template-columns:1fr}.hero-art{min-height:360px}.menu{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr);gap:20px;padding:25px 20px}.storycopy h2,.order h2{font-size:48px}}
-@media(max-width:560px){.menu{grid-template-columns:1fr}.hero{padding-top:50px}h1{font-size:62px}.pillars{grid-template-columns:1fr}.actions{flex-direction:column}.footerin{flex-direction:column;align-items:flex-start}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Raja Sweets And Fast Food, Main Road, Dayapuri, Modinagar — famous for Chhole Bhature, Boondi Ladoo, Lassi, Rabdi and fast food near Modi Mandir.">
+  <title>Raja Sweets | Modinagar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="top">A taste of tradition • Crafted in Modinagar since 2000 • Order online</div>
-<nav><div class="navin">
-<a class="brand" href="#"><div class="logo"></div><div class="brandtext"><b>Raja Sweets</b><span>Sweet • Bakery • Snacks</span></div></a>
-<div class="links"><a href="#menu">Menu</a><a href="#story">Our Story</a><a href="#order">Dine-In QR</a><a href="#contact">Contact</a></div>
-<button class="cartbtn" onclick="openCart()">Cart <span id="count">0</span></button>
-</div></nav>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Raja Sweets home">
+        <span class="brand-mark">♛</span>
+        <span><strong>RAJA SWEETS AND FAST FOOD</strong><small>MODINAGAR</small></span>
+      </a>
+      <button class="menu-toggle" aria-label="Open navigation">☰</button>
+      <nav class="nav">
+        <a class="active" href="#top">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="#about">About</a>
+        <a href="#specialties">Specialties</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#location">Location</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#location">● Visit Us</a>
+    </div>
+  </header>
 
-<main>
-<section class="hero">
-<div><div class="kicker">The Royal Taste of Modinagar</div><h1>Tradition,<br><i>served beautifully.</i></h1>
-<p>A premium digital home for Raja Sweets — bringing mithai, namkeen, restaurant favourites and effortless ordering together in one elegant experience.</p>
-<div class="actions"><a class="primary" href="#menu" style="text-decoration:none">Explore the Menu</a><button class="secondary" onclick="openCart()">Start an Order</button></div>
-</div>
-<div class="hero-art"><div class="orn t">✦</div><div class="plate"><div class="sweet"></div></div><div class="orn b">✦</div><div class="hero-note">Authentic • Fresh • Since 2000</div></div>
-</section>
+  <main>
+    <section class="hero">
+      <div class="hero-photo"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">TRADITIONAL TASTE <span>•</span> MODERN FLAVOURS</p>
+        <h1>RAJA<br><em>SWEETS</em></h1>
+        <p class="hero-place">Modinagar, Uttar Pradesh</p>
+        <p class="hero-copy">A much-loved local spot for Chhole Bhature, Boondi Ladoo, Lassi, Rabdi and fast food, with North Indian, South Indian and Chinese favourites.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#location">Get Directions <span>↗</span></a>
+          <a class="btn bulk-order-btn" href="tel:+917037731096">Bulk Order? Call Now <span>☎</span></a>
+        </div>
+        <div class="rating">
+          <span class="stars">★★★★★</span>
+          <strong>3.7</strong><i></i><span>99 Dining Ratings</span>
+        </div>
+      </div>
+    </section>
 
-<div class="stats"><div><b>25+</b><span>Years of Taste</span></div><div><b>50+</b><span>Menu Favourites</span></div><div><b>4.2★</b><span>Online Delivery</span></div><div><b>100%</b><span>Vegetarian</span></div></div>
+    <section class="category-strip">
+      <div class="container categories">
+        <a href="#specialties"><img src="assets/gulab-jamun.jpg"><span>Traditional<br>Sweets</span></a>
+        <a href="#specialties"><img src="assets/north-indian.jpg"><span>North<br>Indian</span></a>
+        <a href="#specialties"><img src="assets/south-indian.jpg"><span>South<br>Indian</span></a>
+        <a href="#specialties"><img src="assets/chinese.jpg"><span>Chinese</span></a>
+        <a href="#specialties"><img src="assets/gift-packs.jpg"><span>Gift<br>Packs</span></a>
+      </div>
+    </section>
 
-<section id="menu"><div class="sectionhead"><div class="kicker">Signature Menu</div><h2>Made for every craving.</h2><p>From royal mithai boxes to restaurant favourites, browse the menu and build your order in seconds.</p></div>
-<div class="tabs" id="tabs"></div><div class="menu" id="menuGrid"></div></section>
+    <section class="section about" id="about">
+      <div class="container two-col">
+        <div class="section-copy">
+          <p class="eyebrow dark">ABOUT RAJA SWEETS</p>
+          <h2>A beloved dining destination <span>in Modinagar.</span></h2>
+          <p>Located on Main Road in Dayapuri, near the iconic Modi Mandir, Raja Sweets And Fast Food brings together popular Indian sweets, hearty North Indian favourites, South Indian dishes, Chinese food and quick bites.</p>
+          <p>Known for favourites including <strong>Chhole Bhature, Boondi Ladoo, Lassi and Rabdi</strong>, the restaurant also offers fast food for quick meals and casual dining.</p>
+          <a class="text-link" href="#contact">Discover Raja Sweets <span>→</span></a>
+        </div>
+        <div class="image-card"><img src="assets/storefront.jpg" alt="Raja Sweets storefront"></div>
+      </div>
+    </section>
 
-<div class="story" id="story"><div class="storyin"><div class="storybox"><div class="seal"><strong>R</strong><small>RAJA SWEETS</small><div style="margin-top:15px">MODINAGAR • EST. 2000</div></div></div>
-<div class="storycopy"><div class="kicker">A Local Legacy</div><h2>More than sweets.<br>A Modinagar tradition.</h2><p>Raja Sweets combines classic Indian mithai and namkeen with a full restaurant menu spanning North Indian, South Indian and Chinese favourites.</p><p>The proposal design turns that variety into a premium brand experience — warm, royal, easy to order and built for repeat customers.</p>
-<div class="pillars"><div class="pillar"><b>Fresh</b><span>Prepared with care</span></div><div class="pillar"><b>Authentic</b><span>Traditional flavours</span></div><div class="pillar"><b>Royal</b><span>Premium presentation</span></div></div></div></div></div>
+    <section class="section specialties" id="specialties">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow dark">OUR SPECIALTIES</p>
+          <h2>Famous favourites for every taste</h2>
+          <p>From classic sweets and refreshing lassi to hearty meals and fast food, there is something for every craving.</p>
+        </div>
+        <div class="cards">
+          <article class="food-card"><img src="assets/gulab-jamun.jpg"><div><h3>Boondi Ladoo</h3><p>A classic sweet and one of Raja Sweets’ famous favourites.</p></div></article>
+          <article class="food-card"><img src="assets/chole-bhature.jpg"><div><h3>Chhole Bhature</h3><p>A hearty North Indian favourite, perfect for a filling meal.</p></div></article>
+          <article class="food-card"><img src="assets/south-indian.jpg"><div><h3>Lassi &amp; Rabdi</h3><p>Refreshing and rich favourites to complete your meal.</p></div></article>
+          <article class="food-card"><img src="assets/chinese.jpg"><div><h3>Fast Food &amp; Chinese</h3><p>Quick, flavourful choices for every mood.</p></div></article>
+          <article class="food-card"><img src="assets/gift-packs.jpg"><div><h3>Traditional Sweets</h3><p>Sweet treats for celebrations and everyday cravings.</p></div></article>
+        </div>
+      </div>
+    </section>
 
-<section class="order" id="order"><div class="orderin"><div><div class="kicker">Smart Dine-In</div><h2>Scan. Order.<br>Enjoy.</h2><p>Turn every table into a digital ordering point. Guests scan a unique table QR, browse the live menu, add items and place the order without waiting for a server.</p>
-<div class="steps"><div class="step"><div class="num">01</div><span>Scan the QR placed on the table</span></div><div class="step"><div class="num">02</div><span>Select dishes & customise the order</span></div><div class="step"><div class="num">03</div><span>Order reaches the restaurant dashboard</span></div><div class="step"><div class="num">04</div><span>Staff prepares & serves the table</span></div></div></div>
-<div class="qr"><div class="fakeqr"></div><b>Table 07 • Scan to Order</b><span>Demo QR — connects to the online menu</span><button class="primary" style="margin-top:18px" onclick="openCart()">Preview Ordering</button></div></div></section>
-</main>
+    <section class="quote-banner">
+      <div class="quote-bg"></div>
+      <div class="container quote-content">
+        <p class="eyebrow">MADE FOR MOMENTS</p>
+        <h2>Good food tastes even better<br><em>when shared.</em></h2>
+        <p>Whether it is a quick bite, a family meal or a festive box of mithai, Raja Sweets is here for every occasion.</p>
+      </div>
+    </section>
 
-<footer class="footer" id="contact"><div class="footerin"><div><b>Raja Sweets</b><p>Near Modi Mandir, GT Road, Modinagar, Uttar Pradesh 201204</p></div><div><p>Call: +91 92194 02691</p><p>Daily • 10:00 AM – 10:00 PM*</p></div><div><button class="primary" onclick="openCart()">Order Online</button></div></div></footer>
+    <section class="section location" id="location">
+      <div class="container location-grid">
+        <div>
+          <p class="eyebrow dark">COME VISIT US</p>
+          <h2>Right in the heart of Modinagar.</h2>
+          <p>Find Raja Sweets And Fast Food on Main Road, Dayapuri, near Modi Mandir in Modinagar — easy to reach and ready to welcome you.</p>
+          <div class="details">
+            <div><span>⌖</span><div><strong>Address</strong><p>Main Road, Dayapuri,<br>Near Modi Mandir, Modinagar,<br>Uttar Pradesh</p></div></div>
+            <div><span>◷</span><div><strong>Opening Hours</strong><p>Call: <a href="tel:+917037731096">+91 70377 31096</a></p></div></div>
+          </div>
+          <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Raja+Sweets+And+Fast+Food+Main+Road+Dayapuri+Modinagar" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+        </div>
+        <div class="map-card">
+          <div class="map-pattern"></div>
+          <div class="pin">●</div>
+          <div class="map-label"><strong>Raja Sweets</strong><span>Modinagar</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<div class="drawer" id="drawer" onclick="if(event.target===this)closeCart()"><div class="panel"><button class="close" onclick="closeCart()">×</button><h2>Your Order</h2><p style="color:#756b62;font-size:13px">Review your selections before checkout.</p><div id="cartItems"></div><div style="display:flex;justify-content:space-between;margin-top:20px;font-weight:800;font-size:18px"><span>Total</span><span id="total">₹0</span></div><button class="checkout" onclick="checkout()">Continue to Checkout</button><div class="notice">Demo website: checkout is a proposal flow. Connect payment, kitchen/POS and order notifications in the production version.</div></div></div>
 
-<div class="modal" id="modal"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><h2>Complete your order</h2><input class="field" placeholder="Full name"><input class="field" placeholder="Mobile number"><select class="field"><option>Dine-In • Table 07</option><option>Takeaway</option><option>Delivery</option></select><textarea class="field" rows="3" placeholder="Special instructions"></textarea><button class="checkout" onclick="placeOrder()">Place Demo Order</button><div class="notice">In the real system this can connect to Razorpay/UPI, WhatsApp/SMS confirmation and a restaurant order dashboard.</div></div></div>
 
-<script>
-const data={
-"Sweets":[
-["Kaju Katli","Classic kaju mithai with a refined royal finish","₹420 / 250g"],
-["Gulab Jamun","Soft, warm and syrupy traditional favourite","₹180 / 250g"],
-["Rasmalai","Chilled milk dumplings with saffron notes","₹220 / 2 pcs"],
-["Desi Ghee Motichoor Laddu","Rich festive laddus made in desi ghee","₹260 / 250g"],
-["Kaju Burfi","Smooth cashew burfi with a delicate finish","₹390 / 250g"],
-["Milk Cake","Traditional slow-cooked milk sweet","₹300 / 250g"]],
-"Restaurant":[
-["Chole Bhature","Raja Sweets signature comfort food","₹180"],
-["Pav Bhaji","Buttery Mumbai-style favourite","₹160"],
-["Shahi Paneer","Rich, creamy North Indian classic","₹240"],
-["Dal Makhani","Slow-cooked black lentils, rich and comforting","₹220"],
-["Paneer Tikka","Char-grilled paneer with aromatic spices","₹260"],
-["Masala Dosa","Crisp dosa with spiced potato filling","₹170"]],
-"Chinese":[
-["Veg Chowmein","Wok-tossed noodles with fresh vegetables","₹150"],
-["Chilli Paneer","Crisp paneer with chilli-garlic sauce","₹220"],
-["Honey Chilli Potato","Crispy potato with sweet-spicy glaze","₹190"],
-["Manchurian","Crispy vegetable balls in savoury sauce","₹190"],
-["Hakka Noodles","Classic wok-tossed noodles","₹170"],
-["Fried Rice","Steamed rice tossed with vegetables","₹180"]],
-"Cakes & Bakery":[
-["Red Velvet Cake","Premium celebration cake","₹650 / 500g"],
-["Black Forest Cake","Chocolate, cream and cherry classic","₹600 / 500g"],
-["Pineapple Cake","Light pineapple and cream celebration cake","₹550 / 500g"],
-["Butterscotch Pastry","Caramelised butterscotch favourite","₹110"],
-["Truffle Pastry","Rich chocolate truffle pastry","₹120"],
-["Chocolate Pastry","Classic chocolate cream pastry","₹110"]],
-"Namkeen":[
-["Plain Mathri","Crisp traditional snack","₹140 / box"],
-["Namakpara","Classic crunchy namakpara","₹140 / box"],
-["Khasta Kachori","Crisp, spiced traditional kachori","₹160 / box"],
-["Bhakharwadi","Spiced rolled snack with a crisp bite","₹160 / box"]]
-};
-let category="Sweets", cart=[];
-function renderTabs(){document.getElementById('tabs').innerHTML=Object.keys(data).map(c=>`<button class="tab ${c===category?'active':''}" onclick="category='${c}';render()">${c}</button>`).join('')}
-function render(){renderTabs();document.getElementById('menuGrid').innerHTML=data[category].map((x,i)=>`<div class="item"><div style="display:flex;gap:15px"><div class="thumb"></div><div><h3>${x[0]}</h3><p>${x[1]}</p><div class="price">${x[2]}</div></div></div><button class="add" onclick="add('${x[0]}','${x[2]}')">ADD</button></div>`).join('')}
-function add(name,price){cart.push({name,price});updateCart();openCart()}
-function updateCart(){document.getElementById('count').textContent=cart.length;document.getElementById('cartItems').innerHTML=cart.length?cart.map((x,i)=>`<div class="cartline"><div><b>${x.name}</b><div style="font-size:11px;color:#777">${x.price}</div></div><div class="qty"><button onclick="removeItem(${i})">−</button></div></div>`).join(''):'<p style="color:#777">Your cart is waiting for something delicious.</p>';document.getElementById('total').textContent='₹'+cart.reduce((s,x)=>s+(parseInt(x.price.replace(/[^0-9]/g,''))||0),0)}
-function removeItem(i){cart.splice(i,1);updateCart()}
-function openCart(){document.getElementById('drawer').classList.add('open');updateCart()}
-function closeCart(){document.getElementById('drawer').classList.remove('open')}
-function checkout(){if(!cart.length){alert('Please add an item first.');return}closeCart();document.getElementById('modal').classList.add('open')}
-function closeModal(){document.getElementById('modal').classList.remove('open')}
-function placeOrder(){closeModal();cart=[];updateCart();alert('Demo order placed successfully!\\n\\nProduction version can send this directly to the Raja Sweets order dashboard.')}
-render();updateCart();
-</script>
+
+  <footer id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="brand-mark">♛</span>
+        <h3>RAJA SWEETS AND FAST FOOD</h3>
+        <small>MODINAGAR</small>
+        <p>Chhole Bhature · Mithai · Lassi · Fast Food</p>
+      </div>
+      <div><h4>Quick Links</h4><a href="#top">Home</a><a href="menu.html">Menu</a><a href="#about">About</a><a href="#specialties">Specialties</a><a href="gallery.html">Gallery</a><a href="#location">Location</a></div>
+      <div><h4>Contact</h4><p>Main Road, Dayapuri<br>Near Modi Mandir, Modinagar<br>Uttar Pradesh</p><p><a href="tel:+917037731096">+91 70377 31096</a></p><p>Dining · 3.7/5 (99 ratings)<br>Delivery · 4.4/5 (50.6K ratings)</p></div>
+      <div><h4>Visit Raja Sweets And Fast Food</h4><p>Come by for mithai, meals and moments worth sharing.</p><a class="footer-btn" href="#location">Get Directions →</a><a class="footer-btn bulk-footer-btn" href="tel:+917037731096">Bulk Order · Call Now</a></div>
+    </div>
+    <div class="copyright">
+      <div class="container copyright-main">
+        <span>© 2026 Raja Sweets. All Rights Reserved.</span>
+        <span>Modinagar, Uttar Pradesh</span>
+      </div>
+
+      <div class="developer-credit-bottom">
+        <div class="developer-credit-inner">
+          <span class="developer-credit-text">Website Designed &amp; Developed by</span>
+          <a href="devanshul-grewal.html" class="developer-name">Devanshul Grewal</a>
+          <a href="devanshul-grewal.html" class="developer-profile">VIEW PROFILE →</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

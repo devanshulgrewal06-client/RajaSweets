@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Devanshul Grewal — Software Engineer, website designer and developer.">
+  <title>Devanshul Grewal | Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+:root{--bg:#070b10;--panel:#0d131a;--panel2:#111922;--text:#f2efe8;--muted:#9da5aa;--gold:#c7a45a;--gold2:#ead6a2;--line:rgba(255,255,255,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0}
+.dg-page{min-height:100vh;background:radial-gradient(circle at 80% 12%,rgba(199,164,90,.13),transparent 28%),radial-gradient(circle at 10% 65%,rgba(53,83,103,.14),transparent 30%),var(--bg);color:var(--text);font-family:inherit;overflow:hidden}
+.dg-page:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(to bottom,black,transparent 90%);opacity:.35}
+.dg-shell{width:min(1180px,91%);margin:auto;position:relative;z-index:1}
+.dg-nav{height:86px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+.dg-logo{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:.2em;font-weight:900}.dg-monogram{width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-family:Georgia,serif;font-size:13px}
+.dg-back{color:#d8d4ca;text-decoration:none;border:1px solid var(--line);padding:10px 15px;border-radius:100px;font-size:10px;font-weight:800;letter-spacing:.1em;transition:.25s}.dg-back:hover{border-color:var(--gold);color:#fff;transform:translateY(-2px)}
+.dg-hero{min-height:calc(100vh - 86px);display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:50px;padding:65px 0 80px}
+.dg-eyebrow{color:var(--gold);font-size:9px;letter-spacing:.3em;font-weight:900}.dg-hero h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(58px,9vw,122px);line-height:.82;letter-spacing:-.055em;margin:20px 0 32px}.dg-hero h1 em{display:block;color:#aab0b3;font-style:italic;margin-left:7vw}.dg-intro{max-width:620px;color:var(--muted);font-size:15px;line-height:1.9;margin:0}.dg-actions{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}.dg-btn{padding:13px 19px;border-radius:100px;text-decoration:none;font-size:10px;font-weight:900;letter-spacing:.12em}.dg-btn-primary{background:var(--gold);color:#0a0d10}.dg-btn-secondary{border:1px solid var(--line);color:#ddd8cd}
+.dg-orbit{height:430px;position:relative;display:grid;place-items:center}.dg-orbit:before,.dg-orbit:after{content:"";position:absolute;border:1px solid rgba(199,164,90,.24);border-radius:50%;transform:rotate(-18deg)}.dg-orbit:before{width:390px;height:180px}.dg-orbit:after{width:300px;height:300px;border-color:rgba(255,255,255,.08)}
+.dg-core{width:190px;height:190px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#27323b,#090e13 65%);border:1px solid rgba(199,164,90,.65);box-shadow:0 0 80px rgba(199,164,90,.13),inset 0 0 45px rgba(0,0,0,.8);display:grid;place-items:center;position:relative;z-index:2}.dg-core span{font-family:Georgia,serif;font-size:70px;color:var(--gold2);letter-spacing:-.1em}.dg-orbit-label{position:absolute;right:0;top:30px;color:#69747b;font-size:8px;letter-spacing:.2em;font-weight:900}.dg-orbit-label.bottom{right:auto;left:5px;top:auto;bottom:35px}
+.dg-section{border-top:1px solid var(--line);padding:80px 0}.dg-section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:42px}.dg-section-title h2{font-family:Georgia,serif;font-size:42px;font-weight:400;margin:0}.dg-section-title span{font-size:9px;color:#687278;letter-spacing:.2em;font-weight:900}
+.dg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.dg-card{background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid var(--line);padding:30px;min-height:170px;position:relative;overflow:hidden}.dg-card:after{content:"";position:absolute;width:100px;height:100px;border:1px solid rgba(199,164,90,.12);border-radius:50%;right:-35px;bottom:-45px}.dg-label{font-size:8px;letter-spacing:.2em;color:var(--gold);font-weight:900}.dg-card h3{font-family:Georgia,serif;font-size:25px;font-weight:400;margin:13px 0 8px}.dg-card p{color:var(--muted);font-size:13px;line-height:1.8;margin:0}
+.dg-feature{margin-top:18px;background:linear-gradient(120deg,#151d24,#0c1117);border:1px solid rgba(199,164,90,.3);padding:35px;position:relative}.dg-feature .line{height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin:18px 0}.dg-feature h3{font-family:Georgia,serif;font-size:28px;font-weight:400;margin:0}.dg-feature p{max-width:760px;color:#aeb5b8;font-size:14px;line-height:1.9;margin:12px 0 0}.dg-feature strong{color:var(--gold2)}
+.dg-footer{border-top:1px solid var(--line);padding:35px 0 55px;display:flex;justify-content:space-between;gap:20px;color:#626c72;font-size:9px;letter-spacing:.15em;font-weight:800}.dg-footer a{color:var(--gold2);text-decoration:none}
+@media(max-width:800px){.dg-hero{grid-template-columns:1fr;padding-top:55px}.dg-orbit{height:310px;order:-1}.dg-orbit:before{width:280px;height:130px}.dg-orbit:after{width:220px;height:220px}.dg-core{width:145px;height:145px}.dg-core span{font-size:54px}.dg-grid{grid-template-columns:1fr}.dg-section{padding:60px 0}.dg-footer{flex-direction:column}}
+
+.dg-company-section{text-align:center;padding-bottom:85px}
+.dg-company-card{max-width:900px;margin:auto;padding:55px 45px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid rgba(199,164,90,.24)}
+.dg-company-card h2{font-family:Georgia,serif;font-size:48px;font-weight:400;color:#f2efe8;margin:12px 0 10px}
+.dg-company-card>p{max-width:600px;margin:0 auto 28px;color:#9da5aa;font-size:14px;line-height:1.8}
+.dg-company-image{max-width:650px;margin:0 auto 28px;border:1px solid rgba(255,255,255,.08);overflow:hidden;background:#070b10}
+.dg-company-image img{display:block;width:100%;height:auto}
+.dg-company-card .dg-btn{display:inline-block}
+
+
+.dg-company-section{text-align:center;padding-bottom:85px}
+.dg-company-card{max-width:920px;margin:auto;text-align:center;padding:58px 48px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid rgba(199,164,90,.24)}
+.dg-company-card h2{font-family:Georgia,serif;font-size:48px;font-weight:400;color:#f2efe8;margin:12px 0 10px}
+.dg-company-intro{max-width:680px;margin:0 auto;color:#9da5aa;font-size:14px;line-height:1.9}
+.dg-company-intro strong{color:#ead6a2}
+.dg-company-divider{height:1px;max-width:500px;margin:38px auto;border-top:1px solid rgba(199,164,90,.2)}
+.dg-company-brand h3{font-family:Georgia,serif;font-size:34px;font-weight:400;color:#ead6a2;margin:10px 0 8px}
+.dg-company-brand p{max-width:650px;margin:0 auto 30px;color:#9da5aa;font-size:13px;line-height:1.8}
+.dg-company-image{max-width:720px;margin:0 auto;border:1px solid rgba(255,255,255,.08);overflow:hidden;background:#070b10}
+.dg-company-image img{display:block;width:100%;height:auto}
+@media(max-width:700px){.dg-company-card{padding:42px 22px}.dg-company-card h2{font-size:39px}.dg-company-brand h3{font-size:29px}}
+
+</style>
+</head>
+<body>
+<main class="dg-page">
+<div class="dg-shell">
+<nav class="dg-nav">
+<div class="dg-logo"><span class="dg-monogram">DG</span>DEVANSHUL GREWAL</div>
+<a class="dg-back" href="index.html">← RAJA SWEETS</a>
+</nav>
+
+<section class="dg-hero">
+<div>
+<div class="dg-eyebrow">SOFTWARE ENGINEER · DIGITAL PROFILE</div>
+<h1>Devanshul <em>Grewal</em></h1>
+<p class="dg-intro">Software Engineer and founder of DS Technology, focused on building clean digital experiences, modern websites and practical technology solutions for businesses.</p>
+<div class="dg-actions">
+<a class="dg-btn dg-btn-primary" href="tel:9997358392">GET IN TOUCH →</a>
+<a class="dg-btn dg-btn-secondary" href="#experience">EXPLORE PROFILE ↓</a>
+</div>
+</div>
+<div class="dg-orbit">
+<div class="dg-orbit-label">ENGINEERING / TECHNOLOGY</div>
+<div class="dg-orbit-label bottom">BUILD · CREATE · DELIVER</div>
+<div class="dg-core"><span>DG</span></div>
+</div>
+</section>
+
+<section class="dg-section" id="experience">
+<div class="dg-section-title"><h2>Experience</h2><span>01 — PROFESSIONAL</span></div>
+<div class="dg-grid">
+<div class="dg-card"><div class="dg-label">ROLE</div><h3>Software Engineer</h3><p>Professional experience as a Software Engineer at Infosys.</p></div>
+<div class="dg-card"><div class="dg-label">ORGANISATION</div><h3>Infosys</h3><p>Working as a Software Engineer in India's largest Tech company, Infosys.</p></div>
+</div>
+<div class="dg-feature">
+<div class="dg-label">CURRENT PROJECT EXPERIENCE</div>
+<div class="line"></div>
+<h3>British Telecom Project</h3>
+<p>Working on the London-based company project <strong>British Telecom project</strong> under Infosys.</p>
+</div>
+</section>
+
+<section class="dg-section">
+<div class="dg-section-title"><h2>Education</h2><span>02 — FOUNDATION</span></div>
+<div class="dg-card">
+<div class="dg-label">DEGREE</div>
+<h3>BTech in Information Technology</h3>
+<p>Academic foundation in Information Technology.</p>
+</div>
+</section>
+
+<section class="dg-section">
+<div class="dg-section-title"><h2>Profile</h2><span>03 — ESSENTIALS</span></div>
+<div class="dg-grid">
+<div class="dg-card"><div class="dg-label">NAME</div><h3>Devanshul Grewal</h3><p>Software Engineer.</p></div>
+<div class="dg-card"><div class="dg-label">CONTACT</div><h3>9997358392</h3><p>Available for direct contact.</p></div>
+</div>
+</section>
+
+
+<section class="dg-section dg-company-section" id="ds-technology">
+  <div class="dg-company-card">
+    <div class="dg-label">ABOUT ME &amp; MY COMPANY</div>
+    <h2>Devanshul Grewal</h2>
+    <p class="dg-company-intro">
+      Software Engineer and founder of <strong>DS Technology</strong>, focused on building
+      clean digital experiences, modern websites and practical technology solutions for businesses.
+    </p>
+
+    <div class="dg-company-divider"></div>
+
+    <div class="dg-company-brand">
+      <div class="dg-label">MY COMPANY</div>
+      <h3>DS Technology</h3>
+      <p>
+        Digital solutions built better — including website development, branding &amp; design,
+        QR and digital solutions, and technology that helps businesses grow.
+      </p>
+    </div>
+
+    <div class="dg-company-image">
+      <img src="assets/ds-technology-front.png" alt="DS Technology">
+    </div>
+  </div>
+</section>
+
+<footer class="dg-footer">
+<span>DEVANSHUL GREWAL · SOFTWARE ENGINEER</span>
+<a href="index.html">RETURN TO RAJA SWEETS →</a>
+</footer>
+</div>
+</main>
+</body>
+</html>
